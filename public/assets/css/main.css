@@ -63,16 +63,23 @@ a {
 }
 
 header {
-    position: fixed;
+    position: relative;
     top: 0;
     text-align: center;
-    padding: 28px 0;
+    padding: 0 !important;
     width: 100%;
     z-index: 20;
 }
 
 header a {
     font-size: 30px;
+}
+
+.head {
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 44%;
+    top: 60px;
 }
 
 section {
@@ -644,6 +651,10 @@ footer {
 
 @media (max-width: 834px) {
 
+    .head {
+        top: 30px;
+    }
+
     .head img {
         width: 59px;
         height: 12px;
@@ -1020,5 +1031,13 @@ footer {
         top: 15%;
         width: 60%;
         left: -5%;
+    }
+
+    .head {
+        top: 15px;
+    }
+
+    .hero__actions {
+        margin-top: 5px;
     }
 }
