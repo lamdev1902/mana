@@ -19,10 +19,14 @@
         @yield('content')
     </main>
 
-    <footer>
+    <footer class="{{ (Request::is('contact') || Request::is('about')) ? 'footer-contact' : '' }}">
         @if (Request::is('/'))
-            <div class="footer-img">
-                <img class="fit-img" src="{{ asset('assets/images/footer/shark.png') }}" alt="">
+            <div class="footer-shark">
+                <img class="fit-img" src="{{ asset('assets/images/faq/shark.png') }}" alt="">
+            </div>
+        @elseif (Request::is('about'))
+            <div class="footer-turtle">
+                <img class="fit-img" src="{{ asset('assets/images/about/turtle.png') }}" alt="">
             </div>
         @endif
         <div class="footer__content">
@@ -35,8 +39,8 @@
                 <a href=""><img width="63" height="63" src="{{ asset('assets/images/tele.svg') }}" alt=""></a>
             </div>
             <div class="footer__action">
-                <a href="/contact">Contact Us</a>
-                <a href="/about">About Us</a>
+                <a href="{{ route('contact') }}">Contact Us</a>
+                <a href="{{ route('about') }}">About Us</a>
             </div>
         </div>
     </footer>

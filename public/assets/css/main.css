@@ -343,10 +343,29 @@ footer {
     background-position: bottom;
 }
 
+.footer-shark {
+    position: absolute;
+    width: 30%;
+    left: 0;
+    top: 0;
+}
+
+.footer-turtle {
+    width: 20%;
+    position: absolute;
+    left: 5%;
+    top: 0;
+}
+
 .footer__content {
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.footer__content p {
+    width: 50%;
+    margin: 0 auto;
 }
 
 .social,
@@ -372,6 +391,156 @@ footer {
     line-height: 80px;
     color: #664D3C;
 }
+
+.contact {
+    padding-top: 120px;
+}
+
+.contact__img,
+.contact__cloud,
+.contact__shark {
+    position: absolute;
+}
+
+.contact__img {
+    width: 25%;
+    top: 5%;
+    left: 10%;
+}
+
+.contact__cloud {
+    width: 100%;
+    left: 0;
+    z-index: -1;
+    bottom: -10%;
+}
+
+.contact__shark {
+    transform: scaleX(-1);
+    right: 0;
+    top: 23%;
+    width: 25%;
+}
+
+.contact__container {
+    max-width: 1254px;
+}
+
+.contact__form {
+    padding: 150px 194px 150px 183px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 343px);
+    row-gap: 80px;
+    justify-content: space-between;
+    background-image: url(../images/contact/contact-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.contact__form .contact__field {
+    text-align: left;
+}
+
+.contact__field:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.contact__field:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.contact__field:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.contact__field-label {
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 1.25vw + 1px, 24px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.333;
+    width: 292px;
+    height: 78px;
+    background-image: url(../images/faq/bg-h3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact__field input,
+.contact__field textarea {
+    width: 100%;
+    height: 72px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid #B8B0C6;
+    background: #FFF;
+}
+
+.contact__field textarea {
+    height: 60%;
+    resize: none;
+}
+
+.footer-contact {
+    padding-top: 0;
+    top: 100px;
+}
+
+
+.about {
+    padding-top: 300px;
+}
+
+.about__item {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.about__item:first-child {
+    width: 70%;
+}
+
+.about__item-label {
+    width: 292px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/faq/bg-h3.png);
+    margin-bottom: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about__label {
+    position: absolute;
+    width: 25%;
+    top: 10%;
+    left: 8%;
+}
+
+.about__beach {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    width: 50%;
+    top: 20%;
+}
+
+
 
 @media (max-width: 1800px) {
 
@@ -431,6 +600,10 @@ footer {
     .special-text {
         margin-bottom: 60px;
     }
+
+    .about__beach {
+        top: 25%;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -462,6 +635,10 @@ footer {
 
     .faq__list-item h3 {
         width: 350px;
+    }
+
+    .about__beach {
+        top: 30%;
     }
 }
 
@@ -656,6 +833,57 @@ footer {
         font-size: 18px;
         font-weight: 600;
     }
+
+    .contact {
+        padding-top: 60px;
+    }
+
+    .contact__img {
+        top: 10%;
+        left: 0;
+    }
+
+    .contact__form {
+        padding: 14%;
+    }
+
+    .contact__field-label {
+        width: 158px;
+        height: 42px;
+    }
+
+    .contact__field input {
+        height: 40px;
+    }
+
+    .about {
+        padding-top: 200px;
+    }
+
+    .about__item-label {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .about__label {
+        left: 0;
+        width: 30%;
+    }
+
+    .about__item:first-child {
+        width: 100%;
+    }
+
+    .about__beach {
+        top: 100%;
+    }
+
+    .footer-shark {
+        position: absolute;
+        width: 25%;
+        left: 0;
+        top: -5%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -720,8 +948,7 @@ footer {
 
     .faq__list-item {
         text-align: center;
-        display: flex
-    ;
+        display: flex;
         flex-direction: column;
         padding: 0 20px;
         align-items: center;
@@ -749,4 +976,49 @@ footer {
         background-size: cover;
     }
 
+    .contact__form {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+        background-image: url(../images/contact/contact-bg-mb.png);
+        background-size: 100%;
+        padding: 30% 14% 50% 14%;
+    }
+
+    .contact__field {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .contact__field textarea {
+        height: 100%;
+    }
+
+    .contact {
+        padding-top: 120px;
+    }
+
+    .contact__img {
+        width: 50%;
+        left: -10%;
+        top: 12%;
+    }
+
+    .contact__shark {
+        top: 10%;
+        width: 40%;
+    }
+
+    .about__item {
+        text-align: center;
+    }
+
+    .about__item-label {
+        margin: 0 auto 16px;
+    }
+
+    .about__label {
+        top: 15%;
+        width: 60%;
+        left: -5%;
+    }
 }
